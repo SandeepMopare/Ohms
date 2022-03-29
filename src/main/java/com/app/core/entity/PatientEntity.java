@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.app.core.entity.AppointmentEntity;
+
 @Entity
 @Table(name = "patient")
 public class PatientEntity {
@@ -37,6 +39,18 @@ public class PatientEntity {
 
 	@Column(nullable = false, unique = true)
 	private String ptPassword;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ptId")
+	private List<AppointmentEntity> appointments;
+
+	public List<AppointmentEntity> getAppointments() {
+		return appointments;
+	}
+
+	public void setAppointments(List<AppointmentEntity> appointments) {
+		this.appointments = appointments;
+	}
 
 	public PatientEntity() {
 		super();
