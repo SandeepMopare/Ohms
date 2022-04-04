@@ -16,7 +16,7 @@ public class PatientService {
 	
 	public PatientEntity getSinglePatient(String ptId) {   //12   string
 		int patId=Integer.parseInt(ptId);                     //12  int
-		PatientEntity PatientEntity=patientRepository.findById(patId);      //findById(12)
+		PatientEntity PatientEntity=patientRepository.findByptId(patId);      //findById(12)
 		return PatientEntity;
 	}
 	
@@ -65,7 +65,7 @@ public class PatientService {
 	// @PostMapping("/update-opt")
 	public PatientEntity patientUpdateOpt(String id) {
 		int ptId = Integer.parseInt(id);
-		PatientEntity patientEntity = patientRepository.findById(ptId);
+		PatientEntity patientEntity = patientRepository.findByptId(ptId);
 		return patientEntity;
 	}
 
@@ -73,7 +73,7 @@ public class PatientService {
 	public PatientEntity patientupdated(String id, String ptName, String age, String ptGmail, String ptMobile,String ptUsername) {
 		int ptId = Integer.parseInt(id);
 		int ptAge = Integer.parseInt(age);
-		PatientEntity patientEntity = patientRepository.findById(ptId);
+		PatientEntity patientEntity = patientRepository.findByptId(ptId);
 		
 		if (patientEntity != null) {
 			patientEntity.setPtId(ptId);

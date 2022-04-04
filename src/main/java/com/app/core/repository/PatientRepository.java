@@ -8,7 +8,7 @@ public interface PatientRepository extends JpaRepository<PatientEntity, Integer>
 
 	PatientEntity findByPtUsernameAndPtPassword(String ptUsername,String ptPassword);
 	
-	PatientEntity findById(int ptId);
+	PatientEntity findByptId(int ptId);
 	//PatientEntity findByPtId(int ptId);
 	
 	PatientEntity findByPtUsername(String ptUsername);

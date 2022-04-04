@@ -15,8 +15,9 @@
 <style>
 .homebg {
 	background-image: url("/image/homebackground/homebackimg.jpg");
-	background-size: cover;
-	height: 100vh;
+	background-size:cover;
+	height:100vh;
+	
 }
 
 .about-section {
@@ -37,19 +38,20 @@
 </head>
 <body class="">
 
-	<div class='container1 homebg' style="height: 600px">
-		<div class="container_content1">
+      <div class='container1 homebg' style="height:600px">
+		<div class="container_content1"   >
 			<div class="container_content_inner1">
-				<div class="title">
-					<h1 style="color: white">Doctor Hub</h1>
+				 <div class="title" >
+					<h1 style="color:white">OHMS</h1>
 				</div>
 				<div class="par">
-					<h5 style="font-family: cursive;">" to bring health care of
-						standards within the reach of every individual we are committed to
-						the achievement and the maintenance of excellence in healthcare
-						for the benefit of the humanity. "</h5>
-				</div>
-
+					<h5 style="font-family:cursive;">
+					
+					" to bring health care of  standards within the reach of every individual we are committed to the achievement and the maintenance of excellence in healthcare for the benefit of the humanity. "
+					
+                     </h5>
+				</div> 
+				
 
 			</div>
 		</div>
@@ -60,8 +62,8 @@
 					<div class="slider-content">
 
 						<div class="slider-single">
-							<img class="slider-single-image" src="image/hospitals/hsp1.jpg"
-								alt="1" />
+							<img class="slider-single-image"
+								src="image/hospitals/hsp1.jpg" alt="1" />
 							<h1 class="slider-single-title">Government Hospitals</h1>
 							<a class="slider-single-likes" href="javascript:void(0);"> <i
 								class="fa fa-heart"></i>
@@ -70,8 +72,8 @@
 						</div>
 
 						<div class="slider-single">
-							<img class="slider-single-image" src="image/hospitals/hsp2.jpg"
-								alt="2" />
+							<img class="slider-single-image"
+								src="image/hospitals/hsp2.jpg" alt="2" />
 							<h1 class="slider-single-title">Government Hospitals</h1>
 							<a class="slider-single-likes" href="javascript:void(0);"> <i
 								class="fa fa-heart"></i>
@@ -80,8 +82,8 @@
 						</div>
 
 						<div class="slider-single">
-							<img class="slider-single-image" src="image/hospitals/hsp3.jpg"
-								alt="3" />
+							<img class="slider-single-image"
+								src="image/hospitals/hsp3.jpg" alt="3" />
 							<h1 class="slider-single-title">Government Hospitals</h1>
 							<a class="slider-single-likes" href="javascript:void(0);"> <i
 								class="fa fa-heart"></i>
@@ -91,30 +93,33 @@
 
 
 						<div class="slider-single">
-							<img class="slider-single-image" src="image/hospitals/hsp4.jpg"
-								alt="4" />
+							<img class="slider-single-image"
+								src="image/hospitals/hsp4.jpg" alt="4" />
 							<h1 class="slider-single-title">Government Hospitals</h1>
 							<a class="slider-single-likes" href="javascript:void(0);"> <i
 								class="fa fa-heart"></i>
 								<p>1,247</p>
 							</a>
 						</div>
+
+
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div>
-		<br>
+	<div >
+	<br>
 		<center>
 			<h1 style="color: black;">
-				<i class="fas fa-user-md"> DoctorHub </i>
+				<i class="fas fa-user-md">OHMS </i>
 			</h1>
 		</center>
 
 		<div class="d-flex">
-
+		
 			<div class="container">
 				<span>Step 1</span> <img alt=""
 					src="https://www.devsnews.com/wp/medinet/wp-content/uploads/2020/06/process-icon-01.png">
@@ -144,10 +149,10 @@
 	<div class="overlay"></div>
 
 
-	<div>
+	<div >
 
 		<div style="text-align: center; color: black;">
-			<br> <br>
+		 <br> <br>
 			<h2>Our Specialist</h2>
 
 			<div class="d-flex">
@@ -166,61 +171,50 @@
 					</div>
 
 				</c:forEach>
-			</div>
 
+
+			</div>
+			
 		</div>
+		
+	
 	</div>
 	<br>
 	<div class="container">
-		<div class=" row" style="height: 350px">
-			<div class="col-6">
-
-				<img src="image/home/missiondoctor.jpg" alt="doctor" width=100%
-					height="350">
-
-			</div>
-			<div
-				class="col-6 d-flex flex-column justify-content-center align-items-center ">
-				<center>
-					<h2>Our Mission</h2>
-				</center>
-
-				At doctorhub, To provide comprehensive health care service, to all
-				section of society by a providing such type of information so
-				user/patient can able to take decision about the problem he is going
-				to face, be the medium to connect patient with hospital and doctor
-				easily.
-			</div>
-
-
-
+	  <div class=" row" style="height:350px">
+		    <div class="col-6">
+		           
+		            <img src="image/home/missiondoctor.jpg" alt="doctor" width=100% height="350">
+		            
+		    </div>
+		     <div class="col-6 d-flex flex-column justify-content-center align-items-center ">
+		           <center><h2>Our Mission</h2></center>
+		          
+		            At doctorhub, To provide comprehensive health care service, to all section of society by a providing such type of information so user/patient can able to take decision about the problem he is going to face, be the medium to connect patient  with hospital and doctor easily.
+		    </div>
+		 
+		
+		
 		</div>
-		<div class=" row" style="height: 350px">
-
-			<div
-				class="col-6 d-flex flex-column justify-content-center align-items-center ">
-				<center>
-					<h2>Our Approach</h2>
-				</center>
-
-				At doctorhub, our approach is to improve the health of those we
-				serve with a commitment to excellence in all that we do. Our goal is
-				to offer quality care and services that set community standards,
-				exceed patients' expectations and are provided in a caring,
-				convenient, cost-effective and accessible manner.
-			</div>
-			<div class="col-6">
-
-				<img src="image/home/approachdoctor.jpg" alt="doctor" width=100%
-					height="350">
-
-			</div>
-
+	   <div class=" row" style="height:350px">
+		    
+		    <div class="col-6 d-flex flex-column justify-content-center align-items-center ">
+		           <center><h2>Our Approach</h2></center>
+		          
+		             At doctorhub, our approach is to improve the health of those we serve with a commitment to excellence in all that we do. Our goal is to offer quality care and services that set community standards, exceed patients' expectations and are provided in a caring, convenient, cost-effective and accessible manner.
+		    </div>
+		 <div class="col-6">
+		           
+		            <img src="image/home/approachdoctor.jpg" alt="doctor" width=100%  height="350">
+		            
+		    </div>		
+		
 		</div>
 	</div>
 	<br>
 
-	<footer class="text-center text-white" style="background-color: black;">
+	<footer class="text-center text-white"
+		style="background-color: black;">
 		<!-- Grid container -->
 		<div class="container p-4 pb-0" style="">
 			<!-- Section: Social media -->
@@ -259,17 +253,16 @@
 		<!-- Grid container -->
 
 		<!-- Copyright -->
-		<div class="text-center">
-			Copyright © 2021. All rights reserved | Designed by Team25. <a
-				href="#">DoctorHub.com</a>
+		<div class="text-center" >
+			Copyright © 2021. All rights reserved | Designed by	Team25. <a href="#">DoctorHub.com</a>
 		</div>
 		<!-- Copyright -->
 	</footer>
-
-
-
-
-
+	
+	
+	
+	
+	
 	<script type="text/javascript">
 
 	const repeat = false;
@@ -509,6 +502,8 @@
 	  marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 	}
 	</script>
+	
+	
 
 </body>
 </html>
