@@ -136,8 +136,8 @@ public class DoctorController {
 	   		   	    PatientEntity  patientEntity=patientService.getSinglePatient(ptid);
 	   		   	 //send mail after cancellation or
 	   		   	emailSenderService.sendSimpleEmail(patientEntity.getPtGmail(),
-	   					"Message from DoctorHub... Your checkup has been successfully done by doctor "+doctorEntity.getDrName()+". Thank You",
-	   					"From DoctorHub!!!");
+	   					"Message from OHMS... Your checkup has been successfully done by doctor "+doctorEntity.getDrName()+". Thank You",
+	   					"From OHMS!!!");
 	   		   	    
 				    return mv;
 	    }
@@ -162,8 +162,8 @@ public class DoctorController {
 	   		   	PatientEntity  patientEntity=patientService.getSinglePatient(ptid);
 	   		   	 //send mail after cancellation or
 	   		   	emailSenderService.sendSimpleEmail(patientEntity.getPtGmail(),
-	   					"Message from DoctorHub... Your booking has been cancelled by doctor "+doctorEntity.getDrName()+". Thank You",
-	   					"From DoctorHub!!!");
+	   					"Message from OHMS... Your booking has been cancelled by doctor "+doctorEntity.getDrName()+". Thank You",
+	   					"From OHMS!!!");
 	   		   	
 				    return mv;
 	    }

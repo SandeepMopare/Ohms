@@ -65,9 +65,9 @@ public class PatientController {
 		patientService.create(patientEntity);
 		
 		emailSenderService.sendSimpleEmail(ptGmail,
-				"You have successfully registered with DoctorHub... You can log with following credentials "
+				"You have successfully registered with OHMS... You can log with following credentials "
 					+" Username: "	+ptUsername  + "  Password: " + ptPassword,
-					"From DoctorHub!!!");
+					"From OHMS!!!");
 		
 		
 	
@@ -145,7 +145,7 @@ public class PatientController {
 			
 			emailSenderService.sendSimpleEmail(ptGmail,
 					"click on this link to update your password   " + "http://localhost:8080/patient/applyforgotPass?UserName="+ patientEntity.getPtUsername() ,
-						"From DoctorHub!!!");
+						"From OHMS!!!");
 			
 			System.out.println(ptGmail);
 			
@@ -382,9 +382,9 @@ public class PatientController {
         	 System.out.println("appointment confirmed with successfully payment");
         	 
         	 emailSenderService.sendSimpleEmail(patientEntity.getPtGmail(),
-        			 "Message from DoctorHub... You have successfully completed payment."
+        			 "Message from OHMS... You have successfully completed payment."
         			 + " Your appointment is confirmed with doctor "+doctorEntity.getDrName()+". Thank You",
-     					"From DoctorHub!!!");
+     					"From OHMS!!!");
         	 
     		 return mv;
     	 }
@@ -394,7 +394,7 @@ public class PatientController {
     		 mv.addObject("patient",patientEntity);
     		 DoctorEntity doctorEntity=doctorService.getDoctor(drid);
     	       mv.addObject("doctor", doctorEntity);
-        	 System.out.println("appointment not confirmed bcz payment fail");
+        	 System.out.println("appointment not confirmed due to payment failure. Please try again.");
     		 return mv; 
     	 }
     	 }
@@ -405,7 +405,7 @@ public class PatientController {
     		 DoctorEntity doctorEntity=doctorService.getDoctor(drid);
     	       mv.addObject("doctor", doctorEntity);
     	       mv.addObject("payment",0);
-        	 System.out.println("appointment not  confirmed bcz payment fail");
+        	 System.out.println("appointment not confirmed due to payment failure. Please try again.");
     		 return mv; 
     	 }
     	 

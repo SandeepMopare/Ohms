@@ -189,7 +189,7 @@
 					<h2>Our Mission</h2>
 				</center>
 
-				At doctorhub, To provide comprehensive health care service, to all
+				At OHMS, To provide comprehensive health care service, to all
 				section of society by a providing such type of information so
 				user/patient can able to take decision about the problem he is going
 				to face, be the medium to connect patient with hospital and doctor
@@ -207,7 +207,7 @@
 					<h2>Our Approach</h2>
 				</center>
 
-				At doctorhub, our approach is to improve the health of those we
+				At OHMS, our approach is to improve the health of those we
 				serve with a commitment to excellence in all that we do. Our goal is
 				to offer quality care and services that set community standards,
 				exceed patients' expectations and are provided in a caring,
@@ -264,8 +264,8 @@
 
 		<!-- Copyright -->
 		<div class="text-center">
-			Copyright © 2021. All rights reserved | Designed by Team25. <a
-				href="#">DoctorHub.com</a>
+			Copyright © 2022. All rights reserved | Designed by Abhinav & Sandeep. <a
+				href="#">OHMS.com</a>
 		</div>
 		<!-- Copyright -->
 	</footer>
