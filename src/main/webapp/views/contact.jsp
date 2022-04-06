@@ -131,15 +131,15 @@ filter: drop-shadow(5px 5px 5px #222);
         <div class="col-md-3 text-center">
             <ul class="list-unstyled mb-0">
                 <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>Team 25, CDAC MUMBAI</p>
+                    <p>Group 71, IACSD Pune</p>
                 </li>
 
                 <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
+                    <p>+ 91 125874623</p>
                 </li>
 
                 <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>doctor0hub@gmail.com</p>
+                    <p>ohmsapplication@gmail.com</p>
                 </li>
             </ul>
         </div>

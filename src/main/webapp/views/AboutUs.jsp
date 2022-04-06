@@ -108,7 +108,7 @@
 
 
 		<p>
-			DoctorHub is committed to being a leading provider of health care services <br>
+			OHMS is committed to being a leading provider of health care services <br>
 			by delivering high quality outcomes for patients and ensuring long term profitability.
 		</p>
 		<a href="home"><i class="fas fa-hand-point-left"></i></a>
@@ -119,9 +119,9 @@
    
 	<div class="card col-8">
 		<img src="/image/mainlogo/mainlogo.png" alt="logo" height="200px" style="width:100% ">
-		<h1>Team25</h1>
+		<h1>Group 71</h1>
 		<p class="title">CEO & Founder, Example</p>
-		<p>CDAC,Mumbai</p>
+		<p>IACSD, Pune</p>
 		<div >
 			<a href="#"><i class="fab fa-facebook fa-3x"></i></a> 
 			<a href="#"><i class="fab fa-twitter-square fa-3x ml-4"></i></a> 
@@ -136,8 +136,8 @@
 	<footer class="about-section1" style="background-color:black">
 		<div class="container  " class="text-center" >
 			<div>
-				Copyright © 2021. All rights reserved | Designed by	Team25. 
-				<a href="#" style="color: white;" target="_blank"><u>Design For U</u></a>
+				Copyright © 2022. All rights reserved | Designed by	Abhinav & Sandeep. 
+				<a href="#" style="color: white;" target="_blank"><u>Design For You</u></a>
 			</div>
 	         </div>
 	</footer>
