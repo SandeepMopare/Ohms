@@ -48,8 +48,8 @@ public class AdminController {
 	// authenticate admin
 	@PostMapping("/AuthentAdmlogin")
 	public ModelAndView AuthenticateAdmin(String admUsername, String admPassword, HttpServletRequest req, HttpServletResponse res)  {
-		String adminusername = "doctorhub";
-		String adminpassword = "doctorhub";
+		String adminusername = "ohms";
+		String adminpassword = "ohms";
 		if ((adminusername.equals(admUsername)) && (adminpassword.equals(admPassword))) {
 			ModelAndView mv = new ModelAndView("Admin");
 		//	req.getSession().setAttribute(admUsername, adminusername);
