@@ -8,9 +8,6 @@ import com.app.core.entity.PrescriptionEntity;
 @Repository
 public interface PrescriptionRepository extends JpaRepository<PrescriptionEntity, Integer> {
 
-
-
 	PrescriptionEntity findByPrecId(int precId);
 
-	
 }
