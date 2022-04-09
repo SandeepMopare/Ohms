@@ -1,5 +1,7 @@
 package com.app.core.controller;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,14 +17,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.app.core.EmailSenderService;
 import com.app.core.dao.Appointment;
+import com.app.core.entity.AppointmentEntity;
 import com.app.core.entity.DoctorEntity;
 import com.app.core.entity.HospitalEntity;
 import com.app.core.entity.PatientEntity;
+import com.app.core.entity.PrescriptionEntity;
 import com.app.core.enums.AptStatus;
 import com.app.core.service.AppointmentService;
 import com.app.core.service.DoctorService;
 import com.app.core.service.HospitalService;
 import com.app.core.service.PatientService;
+import com.app.core.service.PrescriptionService;
 
 @Controller
 @RequestMapping("/dr")
@@ -43,8 +48,8 @@ public class DoctorController {
 	@Autowired
 	EmailSenderService emailSenderService ;
 
-	//@Autowired
-	//DoctorRepository doctorRepository;
+	@Autowired
+	PrescriptionService prescriptionService;
 		
 	@GetMapping("/login")
 	public ModelAndView drLog() {
@@ -179,5 +184,82 @@ public class DoctorController {
 				return mv;
 			     
 			
+		}
+		
+		@GetMapping("/addPrescription")
+		public ModelAndView addPrecription(String drid, String ptid, String aptId) {
+			ModelAndView mv = new ModelAndView("Prescription");
+			System.out.println("in addPrescription");
+			mv.addObject("addPrecWindow", 1);
+			mv.addObject("precReg", 2);
+			DoctorEntity doctorEntity = doctorService.getDoctor(drid);
+			mv.addObject("doctor", doctorEntity);
+			PatientEntity patientEntity = patientService.getSinglePatient(ptid);
+			mv.addObject("patient", patientEntity);
+			// HospitalEntity hospitalEntity = HospitalService.getHospital(hid);
+			// mv.addObject("hospital", hospitalEntity);
+			AppointmentEntity appointmentEntity = appointmentService.getAptById(aptId);
+			mv.addObject("appointment", appointmentEntity);
+			return mv;
+		}
+
+		@PostMapping("/addPrec")
+		public ModelAndView addPrec(String drid, String ptid, String aptId, String dateTime, String diagnosedWith, String bloodPressure, String pulseRate,
+				String weight, String allergies, String disabilities, String dose1, String drug1, String unit1,
+				String dose2, String drug2, String unit2, String test1, String test2) {
+			ModelAndView mv = new ModelAndView("Prescription");
+			DoctorEntity doctorEntity = doctorService.getDoctor(drid);
+			mv.addObject("doctor", doctorEntity);
+			PatientEntity patientEntity = patientService.getSinglePatient(ptid);
+			mv.addObject("patient", patientEntity);
+			// HospitalEntity hospitalEntity = HospitalService.getHospital(hid);
+			// mv.addObject("hospital", hospitalEntity);
+			AppointmentEntity appointmentEntity = appointmentService.getAptById(aptId);
+			mv.addObject("appointment", appointmentEntity);
+			try {
+
+				
+
+				// apply internal validation
+				System.out.println(dateTime);
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				LocalDate localDate = LocalDate.parse(dateTime, formatter);
+				// LocalDate localDate = LocalDate.of(2020, 12, 31);
+
+				System.out.println("In addPrec");
+
+				System.out.println(diagnosedWith.trim());
+				String diagnoseWith = diagnosedWith;
+
+				int bP = Integer.parseInt(bloodPressure.trim());
+				int pR = Integer.parseInt(pulseRate.trim());
+				int wt = Integer.parseInt(weight.trim());
+				String allergy = allergies.trim();
+				String disability = disabilities.trim();
+				String dos1 = dose1.trim();
+				String drg1 = drug1.trim();
+				String unt1 = unit1.trim();
+				String dos2 = dose1.trim();
+				String drg2 = drug1.trim();
+				String unt2 = unit1.trim();
+				String tst1 = test1.trim();
+				String tst2 = test2.trim();
+
+				PrescriptionEntity prescriptionEntity = new PrescriptionEntity(localDate, bP, pR, wt, diagnoseWith, allergy,
+						disability, drg1, unt1, dos1, drg2, unt2, dos2, tst1, tst2);
+				// hospitalService.addHsp(hospitalEntity);
+				System.out.println(prescriptionEntity);
+				prescriptionService.addPrec(prescriptionEntity);
+
+				mv.addObject("addPrecWindow", 1);
+				mv.addObject("precReg", 1);
+				System.out.println("Precription added successfully ");
+				return mv;
+			} catch (Exception e) {
+				mv.addObject("addPrecWindow", 1);
+				mv.addObject("precReg", 0);
+				System.out.println("Precription not added ");
+				return mv;
+			}
 		}
 }

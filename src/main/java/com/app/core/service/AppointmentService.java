@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import com.app.core.converter.AppointmentConverter;
 import com.app.core.dao.Appointment;
 import com.app.core.entity.AppointmentEntity;
+import com.app.core.entity.PrescriptionEntity;
 import com.app.core.enums.AptStatus;
 import com.app.core.repository.AppointmentRepository;
+import com.app.core.repository.PrescriptionRepository;
 
 @Service
 public class AppointmentService {
@@ -18,6 +20,9 @@ public class AppointmentService {
 	@Autowired AppointmentRepository appointmentRepository;
 	
 	@Autowired AppointmentConverter appointmentConverter;
+	
+	@Autowired
+	PrescriptionRepository prescriptionRepository;
 	
 	//patient having all appointment list  in descending order of date so we get latest activity at top
 	public List<Appointment>  getAptListPt(String ptid){
@@ -143,15 +148,45 @@ public class AppointmentService {
 		 AptStatus aptStatus=AptStatus.CONFIRMED;  
 		 int doctId=Integer.parseInt(drid);
 		 int patId=Integer.parseInt(ptid);
-		 AppointmentEntity appointmentEntity=appointmentRepository.findByPtIdAndDrIdAndAptStatus(patId, doctId,aptStatus);
-		 if(appointmentEntity!=null) {
-			 System.out.println("appointment for given ptid drid appdate already present in database");
-			return true;
-		 }
-		 else {
-			 System.out.println("appointment for given ptid drid appdate already not present in database");
-			 return false;
-		 }
-	  } 
+		 List<AppointmentEntity> appointmentEntity = appointmentRepository.findByPtIdAndDrIdAndAptStatus(patId, doctId,
+					aptStatus);
+			if (appointmentEntity.isEmpty()) {
+				System.out.println("appointment for given ptid drid appdate already not present in database");
+				return false;
+			} else {
+				System.out.println("appointment for given ptid drid appdate already present in database");
+				return true;
+			}
+	  }
+	 
+	 public AppointmentEntity getAptById(String aptId) {
+			int aptid = Integer.parseInt(aptId);
+			AppointmentEntity appointmentEntity = appointmentRepository.findByAptId(aptid);
+			return appointmentEntity;
+		}
+
+		public List<PrescriptionEntity> aptForPec(String ptid, String drid) {
+			AptStatus aptStatus = AptStatus.CLOSED;
+			int doctId = Integer.parseInt(drid);
+			int patId = Integer.parseInt(ptid);
+			List<AppointmentEntity> appointmentList = appointmentRepository.findByPtIdAndDrIdAndAptStatus(patId, doctId,
+					aptStatus);
+			List<PrescriptionEntity> precList = new ArrayList<PrescriptionEntity>();
+			for (AppointmentEntity a : appointmentList) {
+				PrescriptionEntity precEntity = prescriptionRepository.findByPrecId(a.getPrescription().getPrecId());
+
+				precList.add(precEntity);
+
+			}
+			return precList;
+
+//			if (appointmentList != null) {
+//				System.out.println("appointment for given ptid drid appdate already present in database");
+//				return true;
+//			} else {
+//				System.out.println("appointment for given ptid drid appdate already not present in database");
+//				return false;
+//			}
+		}
 	
 }
