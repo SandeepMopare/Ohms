@@ -1,8 +1,11 @@
 package com.app.core.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.core.entity.HospitalEntity;
 import com.app.core.entity.PrescriptionEntity;
 import com.app.core.repository.AppointmentRepository;
 import com.app.core.repository.DoctorRepository;
@@ -39,5 +42,10 @@ public class PrescriptionService {
 
 		prescriptionRepository.save(prescriptionEntity);
 		System.out.println("Hello");
+	}
+
+	public List<PrescriptionEntity> listPrescByDrIdPtId(int drId, int ptId) {
+		List<PrescriptionEntity> PrecList = prescriptionRepository.findByDrIdAndPtId( ptId, drId);
+		return PrecList;
 	}
 }

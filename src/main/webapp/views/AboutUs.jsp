@@ -111,14 +111,14 @@
 			OHMS is committed to being a leading provider of health care services <br>
 			by delivering high quality outcomes for patients and ensuring long term profitability.
 		</p>
-		<a href="home"><i class="fas fa-hand-point-left"></i></a>
+		<a href="home"><i class="far fa-hand-point-left"></i></a>
 	</div>
 	
   
 	
    
 	<div class="card col-8">
-		<img src="/image/mainlogo/mainlogo.png" alt="logo" height="200px" style="width:100% ">
+		<img src="/image/mainlogo/mainlogo.jpg" alt="logo" height="200px" style="width:100% ">
 		<h1>Group 71</h1>
 		<p class="title">CEO & Founder, Example</p>
 		<p>IACSD, Pune</p>

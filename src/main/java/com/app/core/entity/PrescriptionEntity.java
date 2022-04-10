@@ -70,6 +70,28 @@ public class PrescriptionEntity {
 	@Column(length = 50)
 	private String test2;
 
+	@Column(nullable = false)
+	private int ptId;
+
+	@Column(nullable = false)
+	private int drId;
+
+	public int getPtId() {
+		return ptId;
+	}
+
+	public void setPtId(int ptId) {
+		this.ptId = ptId;
+	}
+
+	public int getDrId() {
+		return drId;
+	}
+
+	public void setDrId(int drId) {
+		this.drId = drId;
+	}
+
 	public int getPrecId() {
 		return precId;
 	}
@@ -110,12 +132,6 @@ public class PrescriptionEntity {
 		this.weight = weight;
 	}
 
-	/*
-	 * public AppointmentEntity getAppointment() { return appointment; }
-	 * 
-	 * public void setAppointment(AppointmentEntity appointment) { this.appointment
-	 * = appointment; }
-	 */
 	public String getDiagnosedWith() {
 		return diagnosedWith;
 	}
@@ -204,9 +220,13 @@ public class PrescriptionEntity {
 		this.test2 = test2;
 	}
 
-	public PrescriptionEntity(LocalDate dateTime, int bloodPressure, int pulseRate, int weight,
-			String diagnosedWith, String allergies, String disabilities, String drug1, String unit1, String dose1,
-			String drug2, String unit2, String dose2, String test1, String test2) {
+	public PrescriptionEntity() {
+		super();
+	}
+
+	public PrescriptionEntity(LocalDate dateTime, int bloodPressure, int pulseRate, int weight, String diagnosedWith,
+			String allergies, String disabilities, String drug1, String unit1, String dose1, String drug2, String unit2,
+			String dose2, String test1, String test2, int drId, int ptId) {
 		super();
 
 		this.dateTime = dateTime;
@@ -224,6 +244,8 @@ public class PrescriptionEntity {
 		this.dose2 = dose2;
 		this.test1 = test1;
 		this.test2 = test2;
+		this.drId = drId;
+		this.ptId=ptId;
 	}
 
 	@Override

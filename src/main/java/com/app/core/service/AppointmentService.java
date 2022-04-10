@@ -164,8 +164,8 @@ public class AppointmentService {
 			AppointmentEntity appointmentEntity = appointmentRepository.findByAptId(aptid);
 			return appointmentEntity;
 		}
-
-		public List<PrescriptionEntity> aptForPec(String ptid, String drid) {
+/*
+		public List<PrescriptionEntity> getAllPrec(String ptid, String drid) {
 			AptStatus aptStatus = AptStatus.CLOSED;
 			int doctId = Integer.parseInt(drid);
 			int patId = Integer.parseInt(ptid);
@@ -173,20 +173,20 @@ public class AppointmentService {
 					aptStatus);
 			List<PrescriptionEntity> precList = new ArrayList<PrescriptionEntity>();
 			for (AppointmentEntity a : appointmentList) {
-				PrescriptionEntity precEntity = prescriptionRepository.findByPrecId(a.getPrescription().getPrecId());
+				//PrescriptionEntity precEntity = prescriptionRepository.findByPrecId(a.getPrescription().getPrecId());
 
 				precList.add(precEntity);
-
 			}
-			return precList;
+			return appointmentList;
+		
 
-//			if (appointmentList != null) {
-//				System.out.println("appointment for given ptid drid appdate already present in database");
-//				return true;
-//			} else {
-//				System.out.println("appointment for given ptid drid appdate already not present in database");
-//				return false;
-//			}
+			if (appointmentList != null) {
+				System.out.println("appointment for given ptid drid appdate already present in database");
+				return true;
+			} else {
+				System.out.println("appointment for given ptid drid appdate already not present in database");
+			return false;
+			}
 		}
-	
+		*/
 }

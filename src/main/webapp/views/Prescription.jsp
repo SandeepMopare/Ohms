@@ -56,8 +56,8 @@ if (session.getAttribute("my-doctor") == null) {
 					<c:if test="${precReg==2 }">
 						<form action="addPrec" method="post" class="forshadow"
 							style="border: 2px solid black; background: white; padding: 20px; border-radius: 20px">
-							<input type="hidden" name="ptid" value="${patient.ptId}" readonly />
-							<input type="hidden" name="drid" value="${doctor.drId}" readonly />
+							<input type="hidden" name="ptId" value="${patient.ptId}" readonly />
+							<input type="hidden" name="drId" value="${doctor.drId}" readonly />
 							<input type="hidden" name="aptId" value="${appointment.aptId}"
 								readonly />
 							<table width="385">
@@ -95,7 +95,7 @@ if (session.getAttribute("my-doctor") == null) {
 										<div class="form-group ">
 											<b>Diagnosed With:</b> <input name="diagnosedWith"
 												class="form-control form-control-sm" rows="2" cols="50"
-												type="text" placeholder="Enter text Here" />
+												type="text" placeholder="Enter text Here" required/>
 										</div>
 									</td>
 								</tr>

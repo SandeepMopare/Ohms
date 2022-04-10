@@ -73,6 +73,7 @@ if (session.getAttribute("my-doctor") == null) {
 						<th>Close Action</th>
 						<th>Cancel Action</th>
 						<th>Add Prescription</th>
+						<th>Medical History</th>
 					</tr>
 
 					<c:forEach var="item" items="${Appointpatientlist}" begin="0"
@@ -116,10 +117,22 @@ if (session.getAttribute("my-doctor") == null) {
 									<input type="hidden" name="drid" value="${doctor.drId}"
 										readonly /> <input type="hidden" name="aptId"
 										value="${item.aptId}" readonly />
-										<%-- <input type="hidden" name="hspId"
+									<%-- <input type="hidden" name="hspId"
 										value="${hospital.hspId}" readonly /> --%>
 									<button class="btn btn-sm btn-primary" type="submit">
 										<i class="fas fa-plus"></i> Add Prescription
+									</button>
+								</form>
+							</td>
+							<td>
+								<form action="presclist" method="get">
+									<input type="hidden" name="ptId" value="${item.ptId}" readonly />
+									<input type="hidden" name="drId" value="${doctor.drId}"
+										readonly /> <%-- <input type="hidden" name="aptId"
+										value="${item.aptId}" readonly /> --%>
+									
+									<button class="btn btn-sm btn-secondary" type="submit">
+										<i class="fas fa-clipboard"></i> Old Records
 									</button>
 								</form>
 							</td>
