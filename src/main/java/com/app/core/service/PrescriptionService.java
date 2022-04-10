@@ -41,7 +41,7 @@ public class PrescriptionService {
 	public void addPrec(PrescriptionEntity prescriptionEntity) {
 
 		prescriptionRepository.save(prescriptionEntity);
-		System.out.println("Hello");
+		
 	}
 
 	public List<PrescriptionEntity> listPrescByDrIdPtId(int drId, int ptId) {

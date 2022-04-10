@@ -276,14 +276,14 @@ public class DoctorController {
 		int patId = Integer.parseInt(ptId.trim());
 		System.out.println(patId);
 		ModelAndView mv = new ModelAndView("PrescriptionList");
-		List<PrescriptionEntity> precList = prescriptionService.listPrescByDrIdPtId(doctId, patId);
+		List<PrescriptionEntity> precList = prescriptionService.listPrescByDrIdPtId(patId,doctId);
 		mv.addObject("prescriptionList", precList);
 		
 		System.out.println(precList.toString());
 		DoctorEntity doctorEntity = doctorService.getDoctor(drId);
 		mv.addObject("doctor", doctorEntity);
 		PatientEntity patientEntity = patientService.getSinglePatient(ptId);
-		mv.addObject("patient", patientEntity);
+		mv.addObject("patient", patientEntity); 
 
 		return mv;
 	}
